@@ -1,0 +1,20 @@
+section {
+  display: flex;
+  justify-content: space-around;
+}
+
+aside {
+
+}
+
+article {
+  background-color: gray;
+  width: 600px;
+}
+
+li.prim {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

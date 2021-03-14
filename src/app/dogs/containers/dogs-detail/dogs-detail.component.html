@@ -1,0 +1,29 @@
+<h1>Details</h1>
+<section>
+  <aside>
+    <img [src]="dogImage.url" alt="" [width]="width" [height]="getHeight()">
+  </aside>
+  <article>
+    <ul>
+      <li *ngFor="let breed of dogImage.breeds" class="prim">
+        <p><span>Name: </span>{{breed.name}}</p>
+        <p><span>Breed group: </span>{{breed.breed_group}}</p>
+        <p><span>Bred for: </span>{{breed.bred_for}}</p>
+        <p><span>Life span: </span>{{breed.life_span}}</p>
+        <span>Weight :</span>
+        <ul>
+          <li><span>Imperial: </span>{{breed.weight.imperial}}</li>
+          <li><span>metric: </span>{{breed.weight.metric}}</li>
+        </ul>
+        <span>Height :</span>
+        <ul>
+          <li><span>Imperial: </span>{{breed.height.imperial}}</li>
+          <li><span>metric: </span>{{breed.height.metric}}</li>
+        </ul>
+        <p><span>Origin: </span>{{breed.origin}}</p>
+        <p><span>Temperament: </span>{{breed.temperament}}</p>
+      </li>
+    </ul>
+  </article>
+</section>
+

@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #85929E;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.btn {
+  font-size: 50px;
+  color: dimgrey;
+  width: 60px;
+  border-radius: 20px;
+  background-color: #D0D3D4;
+  opacity: 20%;
+}
+
+.btn:hover {
+  opacity: 80%;
+}
+
+.carous {
+  position: relative;
+  display: flex;
+  justify-content: left;
+  width: 1200px;
+  padding: 0;
+  margin-left: 0;
+}
+
+.list {
+  display: flex;
+  justify-content: left;
+}
+
+li {
+  list-style-type: none;
+}
+
+h3 {
+  text-align: center;
+}
+
+h2 {
+  color: #E5E7E9;
+  font-size: 30px;
+  padding: 10px;
+  background-color: #E67E22;
+  border-radius: 5px;
+  width: 15%;
+}
+
+
+
+
+
+
+

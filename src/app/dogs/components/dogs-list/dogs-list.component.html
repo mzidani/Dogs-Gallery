@@ -1,0 +1,25 @@
+<h2>{{dogsList.breed}}</h2>
+<div class="container">
+  <button type="button" class="btn" (click)="moveSlide(-1)">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+
+  <div class="list">
+      <ul class="carous">
+        <li *ngFor="let dog of dogsSlice">
+          <h3>{{dog.name}}</h3>
+          <a routerLink="/detail/{{dog.image.id}}">
+            <img [src]="dog.image.url" [alt]="" height="200px" width="300px">
+          </a>
+        </li>
+      </ul>
+  </div>
+  <button type="button" class="btn" (click)="moveSlide(1)">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+
+</div>
+
+<br>
+<br>
+<br>
