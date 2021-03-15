@@ -6,13 +6,15 @@ import { DogsListComponent } from './components/dogs-list/dogs-list.component';
 import { DogsDetailComponent } from './containers/dogs-detail/dogs-detail.component';
 import {RouterModule} from '@angular/router';
 import { DogsSearchComponent } from './components/dogs-search/dogs-search.component';
+import { DogsCommentComponent } from './components/dogs-comment/dogs-comment.component';
 
 @NgModule({
   declarations: [
     DogsDashboardComponent,
     DogsListComponent,
     DogsDetailComponent,
-    DogsSearchComponent
+    DogsSearchComponent,
+    DogsCommentComponent
   ],
   imports: [
     CommonModule,
