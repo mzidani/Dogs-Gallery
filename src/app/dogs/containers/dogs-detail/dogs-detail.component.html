@@ -1,29 +1,67 @@
-<h1>Details</h1>
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="">
+          <h1><i class="fas fa-dog"></i> Dogs Gallery</h1>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<h1 class="detail"><i class="fas fa-file-alt"></i> Informations</h1>
 <section>
   <aside>
     <a [href]="dogImage.url" alt=""> <img [src]="dogImage.url" alt="" [width]="width" [height]="getHeight()"></a>
   </aside>
   <article>
-    <ul>
-      <li *ngFor="let breed of dogImage.breeds" class="prim">
-        <p><span>Name: </span>{{breed.name}}</p>
-        <p><span>Breed group: </span>{{breed.breed_group}}</p>
-        <p><span>Bred for: </span>{{breed.bred_for}}</p>
-        <p><span>Life span: </span>{{breed.life_span}}</p>
-        <span>Weight :</span>
-        <ul>
-          <li><span>Imperial: </span>{{breed.weight.imperial}}</li>
-          <li><span>metric: </span>{{breed.weight.metric}}</li>
-        </ul>
-        <span>Height :</span>
-        <ul>
-          <li><span>Imperial: </span>{{breed.height.imperial}}</li>
-          <li><span>metric: </span>{{breed.height.metric}}</li>
-        </ul>
-        <p><span>Origin: </span>{{breed.origin}}</p>
-        <p><span>Temperament: </span>{{breed.temperament}}</p>
-      </li>
-    </ul>
+
+      <table *ngFor="let breed of dogImage.breeds" class="prim">
+        <tr>
+          <td class="label">Name : </td>
+          <td class="content">{{breed.name}}</td>
+        </tr>
+        <tr>
+          <td class="label">Breed group : </td>
+          <td class="content">{{breed.breed_group}}</td>
+        </tr>
+        <tr>
+          <td class="label">Bred for : </td>
+          <td class="content">{{breed.bred_for}}</td>
+        </tr>
+        <tr>
+          <td class="label">Life span : </td>
+          <td class="content">{{breed.life_span}}</td>
+        </tr>
+        <tr>
+          <td class="label">Weight :</td>
+          <td class="content">
+            <ul>
+              <li><span>Imperial : </span>{{breed.weight.imperial}}</li>
+              <li><span>metric : </span>{{breed.weight.metric}}</li>
+            </ul>
+          </td>
+        </tr>
+       <tr>
+         <td class="label">Height :</td>
+         <td class="content">
+           <ul>
+             <li><span>Imperial : </span>{{breed.height.imperial}}</li>
+             <li><span>metric : </span>{{breed.height.metric}}</li>
+           </ul>
+         </td>
+       </tr>
+
+        <tr>
+          <td class="label">Origin : </td>
+          <td class="content">{{breed.origin}}</td>
+        </tr>
+        <tr>
+          <td class="label">Temperament : </td>
+          <td class="content">{{breed.temperament}}</td>
+        </tr>
+      </table>
+
   </article>
 </section>
 
