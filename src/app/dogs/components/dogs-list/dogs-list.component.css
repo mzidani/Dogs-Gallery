@@ -4,6 +4,7 @@
   background-color: #85929E;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  width: 1320px;
 }
 
 .btn {
@@ -55,6 +56,13 @@ h2 {
   border-radius: 5px;
   width: 15%;
 }
+
+.bloc {
+  display: flex;
+  justify-content: center;
+}
+
+
 
 
 
