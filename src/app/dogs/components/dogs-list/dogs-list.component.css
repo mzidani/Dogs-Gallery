@@ -39,6 +39,12 @@ li {
 
 h3 {
   text-align: center;
+  color: #D5DBDB;
+  border: 1px solid #D5DBDB;
+  padding: 5px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 20px;
 }
 
 h2 {

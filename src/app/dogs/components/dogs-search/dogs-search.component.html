@@ -1,0 +1,10 @@
+<h2><i class="fas fa-search white"></i> Search results</h2>
+<section>
+  <div class="grid">
+    <div *ngFor="let dog of dogs" class="single" routerLink="/detail/{{dog.image.id}}">
+      <span class="title">{{dog.name}}</span>
+      <img src="{{dog.image.url}}" width="{{getWidth(dog.image.width, dog.image.height)}}" height="{{height}}">
+    </div>
+  </div>
+</section>
+

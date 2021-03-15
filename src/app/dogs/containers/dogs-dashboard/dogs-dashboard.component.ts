@@ -1,7 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {DogsService} from '../../dogs.service';
 import {Dog, DogsList} from '../../entities/dogs.interface';
-import {Subscription} from 'rxjs';
+import {Observable, Subject, Subscription} from 'rxjs';
+import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'dogs-dashboard',
@@ -17,11 +18,15 @@ export class DogsDashboardComponent implements OnInit, OnDestroy {
   breeds: string[] = [];
   start: number = 0;
   end: number = 3;
+  searched: boolean = false;
+  private searchTerms = new Subject<string>();
+  dogsResult: Dog[];
 
   constructor(private dogsService: DogsService) { }
 
   ngOnInit(): void {
     this.getDogs();
+    this.doSearch();
   }
 
   getDogs() {
@@ -45,6 +50,20 @@ export class DogsDashboardComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.dogsSubscribtion$.unsubscribe();
+  }
+
+  search(term: string) {
+    if(term.trim()){
+      var regex = new RegExp(term,'i');
+      this.dogsResult =  this.dogs.filter(dog => regex.test(dog.name));
+      this.searched = true;
+    }else {
+      this.searched = false;
+    }
+  }
+
+  doSearch() {
+    //this.dogsResult =  this.dogs.filter(dog => dog.name == term));
   }
 
 }
