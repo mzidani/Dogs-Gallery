@@ -13,7 +13,7 @@ aside {
 
 }
 
-h1 {
+h1.detail {
   color: #E5E7E9;
   font-size: 30px;
   padding: 10px;
@@ -24,15 +24,60 @@ h1 {
 
 article {
   background-color: #E5E7E9;
-  width: 50%;
+  width: 42%;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  font-size: 18px;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 560px;
+  padding: 20px;
 }
 
-li.prim {
+td {
+  height: 30px;
+}
+
+.label {
+  width: 150px;
+  color: #34495E;
+}
+
+.content {
+  background-color: #FCF3CF;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+li {
   list-style-type: none;
+}
+
+nav {
+  background-color: #283747;
+}
+
+header {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: start;
+  margin-top: -10px;
+  padding: 0;
+  width: 100%;
 }

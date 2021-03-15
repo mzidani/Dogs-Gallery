@@ -34,6 +34,7 @@ export class DogsDetailComponent implements OnInit, OnDestroy {
 
   getHeight(): number {
     let dimension = (this.width * 100) / this.dogImage.width;
+    console.log(this.dogImage.height * dimension / 100);
     return this.dogImage.height * dimension / 100;
   }
 
