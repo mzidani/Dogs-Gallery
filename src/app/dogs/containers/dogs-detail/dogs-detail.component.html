@@ -16,7 +16,7 @@
   </aside>
   <article>
 
-      <table *ngFor="let breed of dogImage.breeds" class="prim">
+      <table *ngFor="let breed of dogImage?.breeds" class="prim">
         <tr>
           <td class="label">Name : </td>
           <td class="content">{{breed.name}}</td>
@@ -64,4 +64,5 @@
 
   </article>
 </section>
+<dogs-comment [count]="count"></dogs-comment>
 
