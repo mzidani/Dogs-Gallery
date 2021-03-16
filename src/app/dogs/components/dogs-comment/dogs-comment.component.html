@@ -1,1 +1,43 @@
-<p>dogs-comment works!</p>
+<div>
+    <h2>Number of adoption requests : {{count}}</h2>
+</div>
+<div>
+    <h2>Sign up for adoption</h2>
+    <form #f='ngForm' (ngSubmit)="onSubmit(f)" novalidate>
+        <table>
+            <tr>
+                <td>
+                    First name
+                </td>
+                <td>
+                    <input type="text" name="firstName" ngModel required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last name
+                </td>
+                <td>
+                    <input type="text" name="lastName" ngModel required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="text" name="email" ngModel required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Number
+                </td>
+                <td>
+                    <input type="text" name="number" ngModel required pattern="[0-9]+">
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Validate</button>
+    </form>
+</div>

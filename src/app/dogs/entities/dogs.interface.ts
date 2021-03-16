@@ -48,3 +48,12 @@ export interface DogsList {
   breed: string,
   dogs: Dog[]
 }
+
+export interface Adopter {
+  id: number,
+  firstName: string,
+  lastName: string,
+  email: string,
+  number: string,
+  dogId: number
+}

@@ -7,6 +7,7 @@ import { DogsDetailComponent } from './containers/dogs-detail/dogs-detail.compon
 import {RouterModule} from '@angular/router';
 import { DogsSearchComponent } from './components/dogs-search/dogs-search.component';
 import { DogsCommentComponent } from './components/dogs-comment/dogs-comment.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DogsCommentComponent } from './components/dogs-comment/dogs-comment.com
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [DogsDashboardComponent]
 })

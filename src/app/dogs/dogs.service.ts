@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {Dog, Image} from './entities/dogs.interface';
+import {Adopter, Dog, Image} from './entities/dogs.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
 
@@ -10,6 +10,9 @@ import {catchError} from 'rxjs/operators';
 export class DogsService {
 
   dogsApi = "https://api.thedogapi.com/v1";
+
+  adoptersApi = "http://localhost:3000/adopters";
+
   option = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
@@ -47,6 +50,15 @@ export class DogsService {
           this.logError(error);
           return of([] as Dog[]);
         }));
+  }
+
+  public getAdopters(): Observable<Adopter[]> {
+      return this.http.get<Adopter[]>(this.adoptersApi, this.option).pipe(
+          catchError((error: any): Observable<Adopter[]> => {
+              this.logError(error);
+              return of([] as Adopter[]);
+          })
+      );
   }
 
   private logError(error: any){
