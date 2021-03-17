@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router'; // holds information about the
 import { Location } from '@angular/common';
 import {DogsService} from '../../dogs.service';
 import {Subscription} from 'rxjs';
-import {Image} from "../../entities/dogs.interface"; // is an Angular service for interacting with the browser
+import {Adopter, Image} from "../../entities/dogs.interface"; // is an Angular service for interacting with the browser
 
 @Component({
   selector: 'app-dogs-detail',
@@ -15,6 +15,7 @@ export class DogsDetailComponent implements OnInit, OnDestroy {
   dogImage: Image;
   dogSubscribtion$: Subscription;
   width = 700;
+  height = 600;
   count: number = 0;
 
   constructor(private route: ActivatedRoute, private location: Location, private dogsService: DogsService) { }
@@ -50,10 +51,13 @@ export class DogsDetailComponent implements OnInit, OnDestroy {
     return this.dogImage?.height * dimension / 100;
   }
 
-  /*
-  getWidth(width: number, height: number): number {
-    let dimension = (this.height * 100) / height;
-    return width * dimension / 100;
-  }*/
 
+  getWidth(): number {
+    let dimension = (this.height * 100) / this.dogImage?.height;
+    return this.dogImage?.width * dimension / 100;
+  }
+
+  addAdopter(adopter: Adopter) {
+    //this.dogSubscribtion$ = this.dogsService.a
+  }
 }

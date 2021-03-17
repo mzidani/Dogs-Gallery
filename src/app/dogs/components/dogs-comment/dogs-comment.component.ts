@@ -10,7 +10,7 @@ import {Adopter} from "../../entities/dogs.interface";
 export class DogsCommentComponent implements OnInit {
 
   @Input() count: number;
-  //@Output() add: EventEmitter<Adopter> = new EventEmitter<Adopter>()
+  @Output() add: EventEmitter<Adopter> = new EventEmitter<Adopter>()
 
   constructor() { }
 
@@ -19,5 +19,6 @@ export class DogsCommentComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     console.log(f.valid);
+    this.add.emit(f.value);
   }
 }
