@@ -12,7 +12,7 @@
                 <td>
                     <input #firstName="ngModel" type="text" name="firstName" ngModel required>
                     <span *ngIf="f.submitted && firstName.invalid" class="error">
-                      First name required
+                      <i class="fas fa-exclamation-circle"></i> First name required
                     </span>
                 </td>
             </tr>
@@ -23,7 +23,7 @@
                 <td>
                     <input #lastName="ngModel" type="text" name="lastName" ngModel required>
                     <span *ngIf="f.submitted && lastName.invalid" class="error">
-                      Last name required
+                      <i class="fas fa-exclamation-circle"></i> Last name required
                     </span>
                 </td>
             </tr>
@@ -34,10 +34,10 @@
                 <td>
                     <input #email="ngModel" type="text" name="email" ngModel required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$">
                     <span *ngIf="f.submitted && email.errors?.required" class="error">
-                      Email required
+                      <i class="fas fa-exclamation-circle"></i> Email required
                     </span>
                     <span *ngIf="f.submitted && email.errors?.pattern" class="error">
-                      Email form incorrect
+                      <i class="fas fa-exclamation-circle"></i> Email form incorrect
                     </span>
                 </td>
             </tr>
@@ -48,11 +48,11 @@
                 <td>
                     <input #number="ngModel" type="text" name="number" ngModel required pattern="^0[0-9]+$" minlength="10">
                     <span *ngIf="f.submitted && number.errors?.required" class="error">
-                      Phone number required
+                      <i class="fas fa-exclamation-circle"></i> Phone number required
                     </span>
                    <span *ngIf="f.submitted && (number.errors?.pattern || number.errors?.pattern)" class="error">
-                      Phone number form incorrect
-                    </span>
+                      <i class="fas fa-exclamation-circle"></i> Phone number form incorrect
+                   </span>
                 </td>
             </tr>
         </table>
