@@ -10,7 +10,10 @@
                     First name
                 </td>
                 <td>
-                    <input type="text" name="firstName" ngModel required>
+                    <input #firstName="ngModel" type="text" name="firstName" ngModel required>
+                    <span *ngIf="f.submitted && firstName.invalid" class="error">
+                      First name required
+                    </span>
                 </td>
             </tr>
             <tr>
@@ -18,7 +21,10 @@
                     Last name
                 </td>
                 <td>
-                    <input type="text" name="lastName" ngModel required>
+                    <input #lastName="ngModel" type="text" name="lastName" ngModel required>
+                    <span *ngIf="f.submitted && lastName.invalid" class="error">
+                      Last name required
+                    </span>
                 </td>
             </tr>
             <tr>
@@ -26,15 +32,27 @@
                     Email
                 </td>
                 <td>
-                    <input type="text" name="email" ngModel required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$">
+                    <input #email="ngModel" type="text" name="email" ngModel required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$">
+                    <span *ngIf="f.submitted && email.errors?.required" class="error">
+                      Email required
+                    </span>
+                    <span *ngIf="f.submitted && email.errors?.pattern" class="error">
+                      Email form incorrect
+                    </span>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Number
+                    Phone number
                 </td>
                 <td>
-                    <input type="text" name="number" ngModel required pattern="[0-9]+">
+                    <input #number="ngModel" type="text" name="number" ngModel required pattern="^0[0-9]+$" minlength="10">
+                    <span *ngIf="f.submitted && number.errors?.required" class="error">
+                      Phone number required
+                    </span>
+                   <span *ngIf="f.submitted && (number.errors?.pattern || number.errors?.pattern)" class="error">
+                      Phone number form incorrect
+                    </span>
                 </td>
             </tr>
         </table>
