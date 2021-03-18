@@ -22,7 +22,6 @@ export class DogsDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getDogImageDetails();
-    this.getAdoptersCount(this.dogImage);
 
   }
 
@@ -59,5 +58,6 @@ export class DogsDetailComponent implements OnInit, OnDestroy {
 
   addAdopter(adopter: Adopter) {
     this.dogSubscribtion$ = this.dogsService.addAdopter(adopter).subscribe();
+    this.ngOnInit();
   }
 }
