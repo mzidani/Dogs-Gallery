@@ -4,6 +4,7 @@
 <div>
     <h2>Sign up for adoption</h2>
     <form #f='ngForm' (ngSubmit)="onSubmit(f)" novalidate>
+      <input type="text" [value]="id" name="dogId" [(ngModel)]="id" hidden>
         <table>
             <tr>
                 <td>
@@ -50,12 +51,12 @@
                     <span *ngIf="f.submitted && number.errors?.required" class="error">
                       <i class="fas fa-exclamation-circle"></i> Phone number required
                     </span>
-                   <span *ngIf="f.submitted && (number.errors?.pattern || number.errors?.pattern)" class="error">
+                   <span *ngIf="f.submitted && (number.errors?.pattern || number.errors?.minlength)" class="error">
                       <i class="fas fa-exclamation-circle"></i> Phone number form incorrect
                    </span>
                 </td>
             </tr>
         </table>
-        <button type="submit">Validate</button>
+        <input type="submit" value="Validate">
     </form>
 </div>

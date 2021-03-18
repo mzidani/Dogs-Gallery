@@ -61,6 +61,15 @@ export class DogsService {
       );
   }
 
+  public addAdopter(adopter: Adopter): Observable<Adopter> {
+    return this.http.post<Adopter>(this.adoptersApi, adopter, this.option).pipe(
+      catchError((error: any): Observable<Adopter> => {
+        this.logError(error);
+        return of({} as Adopter);
+      })
+    );
+  }
+
   private logError(error: any){
     console.log(`ERROR: ${error}`);
   }
