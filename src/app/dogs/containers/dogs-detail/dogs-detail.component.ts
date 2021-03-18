@@ -22,7 +22,7 @@ export class DogsDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getDogImageDetails();
-    //this.getAdoptersCount();
+    this.getAdoptersCount(this.dogImage);
 
   }
 
@@ -39,7 +39,7 @@ export class DogsDetailComponent implements OnInit, OnDestroy {
   }
 
   getAdoptersCount(dog: Image) {
-    return this.dogsService.getAdopters().subscribe(adopters => {
+    this.dogSubscribtion$ = this.dogsService.getAdopters().subscribe(adopters => {
       this.count = adopters.filter(a => a.dogId == dog.breeds[0].id).length;
       console.log("count : "+this.count);
     });
@@ -58,6 +58,6 @@ export class DogsDetailComponent implements OnInit, OnDestroy {
   }
 
   addAdopter(adopter: Adopter) {
-    //this.dogSubscribtion$ = this.dogsService.a
+    this.dogSubscribtion$ = this.dogsService.addAdopter(adopter).subscribe();
   }
 }
